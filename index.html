@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa y Ranking de Equipos Móviles | cualEsMejor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <link rel="stylesheet" href="./estilos/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/main.js" defer></script>
+
+</head>
+
+<body>
+    <header class="bg-dark text-white">
+        <span id="logo">
+            <h1>CualEsMejor</h1>
+        </span>
+        <span></span>
+    </header>
+    <div class="container-flex">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-3 col-md-3" style="background: #f99500;">
+                <a href="./paginas/comparador.html"></a>
+            </div>
+            <div class="col col-lg-9 col-md-9">
+                <div class="container album py-5 bg-light">
+                    <h3>Productos:</h3>
+                    <div id="productos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="eleccion" class="text-end px-2">
+        <div>
+            <h5 class="text-center">Seleccionados | v</h5>
+        </div>
+        <div>
+            <ul></ul>
+            <div>
+                <button id="boton__comparar">Comparar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

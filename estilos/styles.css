@@ -1,0 +1,90 @@
+body{
+    overflow-x: hidden;
+}
+a, a:link, a:hover, a:active {
+    color: black;
+    text-decoration:dotted;
+
+}
+.barra {
+    background: linear-gradient(134deg,rgba(73, 32, 255, 0.733),rgba(51, 245, 125, 0.733) 30%,rgba(197, 27, 132, 0.733));
+    height: 5px;
+    border-radius: 3px;
+}
+
+input:button {
+    z-index: 3;
+}
+
+.puntaje__fondo{
+    font-size: 10px;
+    width: 6em;
+    height: 6em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-right: 0.375em;
+}
+
+.puntuacion{
+
+    width: 5em;
+    height: 5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: white;
+}
+
+.puntaje_num{
+    font-size: 2.3em;
+}
+.palabra__puntos{
+    font-size: 0.8em;
+}
+
+img{
+    width: 120px;
+    aspect-ratio: 120/254;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+
+#logo{
+    letter-spacing: 1px;
+}
+
+.btn-comparacion{
+    margin-left: 0.3em;
+    border-radius : 10px 10px 10px 0;
+    position: relative;
+    right: -100;
+    width: 150%;
+}
+.btn-comparacion:hover{
+    background-color: #f99500;
+    position: relative;
+
+    width: 150px;
+}
+
+#eleccion {
+    display: none;
+    position:fixed;
+    bottom: 1em;
+    right: 1em;
+    background-color: white;
+    width: 16em;
+    border-radius: 0.375em;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5)
+
+}
+#eleccion h5:hover{
+    cursor: pointer;
+}
+
+#eleccion ul li {
+    border-top:1px solid blue;
+}
