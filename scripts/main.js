@@ -1,125 +1,17 @@
-const baseDatos = [{
-    nombre: "Vivo Y77e (T1)",
-    fLanzamiento: "18/8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "Huawei Nova 10",
-    fLanzamiento: "8/7/2022",
-    precio: 1100000,
-    caracteristicas: {
-        diseno: 47,
-        pantalla: 46,
-        camaras: 71,
-        bateria: 51
-    }
-}, {
-    nombre: "infinix note 12 pro 4g",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 100,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "honor x8 5G",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "TCL 201",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "iqoo 9t",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "samsung galaxy a23 5g",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "xiaomi redmi k50 extreme edition",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "oneplus ace pro",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "lenovo legion y70",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "Motorola Edge (2022)",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}, {
-    nombre: "Oppo Reno8 4G",
-    fLanzamiento: "8/2022",
-    precio: 1080000,
-    caracteristicas: {
-        diseno: 45,
-        pantalla: 33,
-        camaras: 64,
-        bateria: 48
-    }
-}]
+// Fetch, para consumir json local llamado datos.json
+const pedirBaseDatos = async () => {
+    const resp = await
+        fetch('./scripts/datos.json')
+    const data = await resp.json()
 
+    data.forEach((el) => {
+        productos.push(new Celular(...Object.values(el)))
+    })
+
+    renderizarProductos();
+}
+
+// Definición de una Clase Celular, con características y método de puntuación
 class Celular {
     constructor(nombre,
         fLanzamiento,
@@ -141,29 +33,22 @@ class Celular {
     }
 }
 
+// Definición de variables
 const productos = [];
 const DOMProductos = document.querySelector("#productos");
 const DOMBotonComparar = document.querySelector("#boton__comparar")
 DOMBotonComparar.disabled = true;
+const productosAComparar = [];
+
+// Función del boton de comparar
 DOMBotonComparar.addEventListener("click", () => window.open('./paginas/comparador.html', '_self'))
 
-baseDatos.forEach(el => {
-    productos.push(new Celular(...Object.values(el)))
-})
-
-
-
-renderizarProductos();
-
-
+pedirBaseDatos();
 
 function renderizarProductos() {
     productos.forEach(el => {
-        // const ancla = document.createElement('a');
-        // ancla.href = 'index.html';
         const miNodo = document.createElement('div');
         miNodo.classList.add('card', 'p-1');
-        // miNodo.classList.add('list-group-item', 'text-right', 'd-flex', 'justify-content-between');
         miNodo.innerHTML = `<h5>${el.nombre}</h5>`;
         const divImgPunt = document.createElement('div');
         divImgPunt.classList.add('w-100', 'text-center', 'm-auto', 'd-flex', 'justify-content-between', 'align-items-start');
@@ -178,8 +63,6 @@ function renderizarProductos() {
             const divIndicador = document.createElement('div');
             divIndicador.classList.add('barra');
             divIndicador.style.width = `${el.caracteristicas[car]}%`;
-            // divIndicador.style.height = '3px'
-            // divIndicador.style.background = 'linear-gradient(134deg,rgba(255,109,32,.733),rgba(255,219,3,.733) 30%,rgba(114,197,27,.733))';
 
             elementoLista.innerHTML = car + ': ' + el.caracteristicas[car];
             elementoLista.appendChild(divIndicador);
@@ -188,18 +71,16 @@ function renderizarProductos() {
 
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn-comparacion')
-        // miBoton.classList.add('btn', 'btn-secondary');
+
         miBoton.innerText = 'Compara';
         miBoton.addEventListener("click", function () { elegirParaComparacion(el) }, false);
 
         // // Mezclamos nodos
-        // miNodo.appendChild(miBoton);
         divImgPunt.appendChild(graficaPuntaje(el.puntuacion));
         divImgPunt.appendChild(imagen);
         divImgPunt.appendChild(miBoton);
         miNodo.appendChild(divImgPunt);
         miNodo.appendChild(listaCaracteristicas);
-        // ancla.appendChild(miNodo);
         DOMProductos.appendChild(miNodo);
     })
 }
@@ -225,38 +106,75 @@ function graficaPuntaje(puntaje) {
     return divPpal;
 }
 
-const productosAComparar = [];
+
 
 function elegirParaComparacion(el) {
-    if (productosAComparar.length < 2){
-        if(!productosAComparar.includes(el)){
-            const DOMeleccion = document.getElementById('eleccion');
-        DOMeleccion.style.display = "block";
-        // muestraOpciones();
-        // DOMeleccion.children[1].style.display = "none";
-        DOMeleccion.children[1].children[0].innerHTML += `<li><h6>${el.nombre}</h6></li>`;
-        productosAComparar.push(el);
-        DOMeleccion.children[0].addEventListener("click", muestraOpciones);
-        sessionStorage.setItem("prods", JSON.stringify(productosAComparar));
+    if (productosAComparar.length < 2) {
+        if (!productosAComparar.includes(el)) {
+            productosAComparar.push(el);
+            renderizarListaComp();
         } else {
             Swal.fire('No puedes elegir el mismo producto 2 veces')
         }
     } else {
         Swal.fire('No puedes elegir más de 2 dispositivos');
     }
-    
+}
+function renderizarListaComp() {
+
+    const DOMeleccion = document.getElementById('eleccion');
+
+    if (DOMeleccion.style.display != "block") {
+        DOMeleccion.style.display = "block";
+        DOMeleccion.children[1].style.display = "none";
+    }
+
+    if (DOMeleccion.children[1].style.display == "none") {
+        DOMeleccion.children[0].children[0].textContent = `Seleccionados (${productosAComparar.length})   |     ^`;
+    } else {
+        DOMeleccion.children[0].children[0].textContent = `Seleccionados (${productosAComparar.length})   |     v`
+    }
+
+    DOMeleccion.children[1].children[0].innerHTML = '';
+    productosAComparar.forEach((el) => {
+        const li = document.createElement('li');
+        const h6 = document.createElement('h6');
+        h6.textContent = `${el.nombre}`
+        const botonBorrar = document.createElement('button');
+        botonBorrar.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+      </svg>`;
+        botonBorrar.classList.add('btn', 'btn-danger', 'm-1', 'p-1')
+
+        botonBorrar.addEventListener("click", function () { borrarElemento(el) }, false)
+        h6.append(botonBorrar);
+        li.append(h6);
+        DOMeleccion.children[1].children[0].append(li);
+
+    })
+    // DOMeleccion.children[1].children[0].innerHTML += `<li><h6>${el.nombre}</h6></li>`;
+
+    DOMeleccion.children[0].addEventListener("click", muestraOpciones);
+    sessionStorage.setItem("prods", JSON.stringify(productosAComparar));
     if (productosAComparar.length == 2) DOMBotonComparar.disabled = false
     else DOMBotonComparar.disabled = true;
 }
-
 function muestraOpciones() {
     const DOMeleccion = document.getElementById('eleccion');
     if (DOMeleccion.children[1].style.display == "none") {
         DOMeleccion.children[1].style.display = "block";
-        DOMeleccion.children[0].children[0].textContent = "Seleccionados    |     v";
+        DOMeleccion.children[0].children[0].textContent = `Seleccionados (${productosAComparar.length})   |     v`;
 
     } else {
         DOMeleccion.children[1].style.display = "none";
-        DOMeleccion.children[0].children[0].textContent = "Seleccionados    |     ^"
+        DOMeleccion.children[0].children[0].textContent = `Seleccionados (${productosAComparar.length})   |     ^`
     }
 }
+
+function borrarElemento(el) {
+    const posicion = productosAComparar.indexOf(el);
+    console.log("Está en la posición " + posicion);
+    productosAComparar.splice(posicion, 1);
+    renderizarListaComp();
+    }

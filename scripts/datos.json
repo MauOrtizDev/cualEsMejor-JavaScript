@@ -1,0 +1,121 @@
+[{
+    "nombre": "Vivo Y77e (T1)",
+    "fLanzamiento": "18/8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "Huawei Nova 10",
+    "fLanzamiento": "8/7/2022",
+    "precio": 1100000,
+    "caracteristicas": {
+        "diseno": 47,
+        "pantalla": 46,
+        "camaras": 71,
+        "bateria": 51
+    }
+}, {
+    "nombre": "infinix note 12 pro 4g",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 100,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "honor x8 5G",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "TCL 201",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "iqoo 9t",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "samsung galaxy a23 5g",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "xiaomi redmi k50 extreme edition",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "oneplus ace pro",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "lenovo legion y70",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "Motorola Edge (2022)",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}, {
+    "nombre": "Oppo Reno8 4G",
+    "fLanzamiento": "8/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "diseno": 45,
+        "pantalla": 33,
+        "camaras": 64,
+        "bateria": 48
+    }
+}]
