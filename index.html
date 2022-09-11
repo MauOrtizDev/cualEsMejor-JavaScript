@@ -20,19 +20,84 @@
 </head>
 
 <body>
-    <header class="bg-dark text-white">
-        <span id="logo">
-            <h1>CualEsMejor</h1>
-        </span>
-        <span></span>
-    </header>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container-fluid fs-4">
+            <a class="navbar-brand fs-1 fw-bold" href="#">CualEsMejor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-around w-100">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                height="12" width="12" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z">
+                                </path>
+                            </svg>
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Teléfonos</a></li>
+                            <li><a class="dropdown-item" href="#">Tablets</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sección en Construcción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <form class="d-flex" role="search">
+                            <input id="buscarCel" class="form-control me-2" type="search" placeholder="Buscar"
+                                aria-label="Search">
+                        </form>
+                        <ul id="resultados-busqueda" class="bg-light fs-6">
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Iniciar Sesión</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
     <div class="container-flex">
         <div class="row justify-content-md-center">
-            <div class="col col-lg-3 col-md-3" style="background: #f99500;">
-                <a href="./paginas/comparador.html"></a>
+            <div class="col col-lg-2 col-md-2 p-3 text-center">
+                <p>
+                    Elige 2 dispositivos para comparar sus características y saber CuálEsMejor
+                </p>
+                <div class="text-start">
+
+
+                </div>
             </div>
-            <div class="col col-lg-9 col-md-9">
-                <div class="container album py-5 bg-light">
+            <div class="col col-lg-10 col-md-10">
+                <div class="container album py-3 bg-light">
+                    <div class="d-flex justify-content-end">
+                        <div class="w-25">
+                            <span>Ordenar por:</span>
+                            <span>
+                                <select id="ordenar" class="form-select" aria-label="Default select example">
+                                    <option value="0" selected>Defecto</option>
+                                    <option value="1">Puntuación (menor a mayor)</option>
+                                    <option value="2">Puntuación (mayor a menor)</option>
+                                    <option value="3">Precio (menor a mayor)</option>
+                                    <option value="4">Precio (mayor a menor)</option>
+                                    <option value="5">Fecha de lanzamiento</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
                     <h3>Productos:</h3>
                     <div id="productos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 

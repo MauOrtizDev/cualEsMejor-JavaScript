@@ -61,14 +61,11 @@ li{
     margin-left: 0.3em;
     border-radius : 10px 10px 10px 0;
     position: relative;
-    right: -100;
-    width: 150%;
+    /* right: -100; */
 }
 .btn-comparacion:hover{
-    background-color: #f99500;
+    background: linear-gradient(134deg,rgba(73, 32, 255, 0.733),rgba(51, 245, 125, 0.733) 30%,rgba(197, 27, 132, 0.733));
     position: relative;
-
-    width: 150px;
 }
 
 #eleccion {
@@ -88,4 +85,16 @@ li{
 
 #eleccion ul li {
     border-top:1px solid blue;
+}
+
+
+#resultados-busqueda{
+    border-radius: 5px;
+    position: absolute;
+    z-index: 3;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+#resultados-busqueda li{
+    border-top:1px solid blue;
+    padding: 5px;
 }
