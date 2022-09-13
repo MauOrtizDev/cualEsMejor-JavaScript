@@ -71,7 +71,7 @@ li{
 #eleccion {
     display: none;
     position:fixed;
-    bottom: 1em;
+    bottom:2em;
     right: 1em;
     background-color: white;
     width: 16em;
@@ -97,4 +97,10 @@ li{
 #resultados-busqueda li{
     border-top:1px solid blue;
     padding: 5px;
+}
+
+.radar {
+    fill: #fafafa;
+    stroke: #999;
+    stroke-width: .2;
 }

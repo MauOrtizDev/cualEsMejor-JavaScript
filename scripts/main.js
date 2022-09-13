@@ -97,7 +97,7 @@ function renderizarProductos() {
         miNodo.classList.add('card', 'p-1');
         miNodo.innerHTML = `<h5>${el.nombre}</h5>`;
         const divImgPunt = document.createElement('div');
-        divImgPunt.classList.add('w-100', 'text-center', 'm-auto', 'd-flex', 'justify-content-between', 'align-items-start');
+        divImgPunt.classList.add('w-100', 'text-center', 'm-auto', 'd-flex', 'justify-content-around', 'align-items-start');
         const imagen = document.createElement('img');
         imagen.src = `./multimedia/celulares/${el.nombre.toLowerCase()}.webp`;
 
