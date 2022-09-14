@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="./scripts/main.js" defer></script>
+    <script type="module" src="./scripts/main.js" defer></script>
 
 </head>
 
@@ -70,7 +70,7 @@
             </div>
         </div>
     </nav>
-    <div class="container-flex">
+    <main class="container-flex mb-4">
         <div class="row">
             <div class="col-lg-2 p-3 text-center">
                 <p>
@@ -105,18 +105,23 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="eleccion" class="text-end px-2">
-        <div>
-            <h5 class="text-center">Seleccionados | ^</h5>
-        </div>
-        <div>
-            <ul></ul>
-            <div class="text-center">
-                <button id="boton__comparar" class="btn btn-primary my-2 px-2">Comparar</button>
+        <div id="eleccion" class="text-end px-2">
+            <div>
+                <h5 class="text-center">Seleccionados | ^</h5>
+            </div>
+            <div>
+                <ul></ul>
+                <div class="text-center">
+                    <button id="boton__comparar" class="btn btn-primary my-2 px-2">Comparar</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    <footer class="footer mt-auto bg-dark">
+        <div class="container">
+            <span class="text-muted">Desarrollado por MauOrtizDev</span>
+        </div>
+    </footer>
 </body>
 
 </html>
