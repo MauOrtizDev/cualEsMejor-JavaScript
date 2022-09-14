@@ -77,11 +77,11 @@ function ordenarProductos() {
                 })
                 break;
             case 5:
-                productos.sort(function (a,b){
+                productos.sort(function (a, b) {
                     const fecha1 = a.fLanzamiento.split('/');
-                    const date1 = new Date(fecha1[2],fecha1[1]-1,fecha1[0]);
+                    const date1 = new Date(fecha1[2], fecha1[1] - 1, fecha1[0]);
                     const fecha2 = b.fLanzamiento.split('/');
-                    const date2 = new Date(fecha2[2],fecha2[1]-1,fecha2[0]);
+                    const date2 = new Date(fecha2[2], fecha2[1] - 1, fecha2[0]);
                     return date2 - date1
                 })
                 break;
@@ -199,7 +199,6 @@ function renderizarListaComp() {
         DOMeleccion.children[1].children[0].append(li);
 
     })
-    // DOMeleccion.children[1].children[0].innerHTML += `<li><h6>${el.nombre}</h6></li>`;
 
     DOMeleccion.children[0].addEventListener("click", muestraOpciones);
     sessionStorage.setItem("prods", JSON.stringify(productosAComparar));

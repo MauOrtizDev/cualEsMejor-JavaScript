@@ -7,13 +7,14 @@ aComparar.sort((a, b) => {
 const DOMComparador = document.querySelector("#comparador");
 
 renderizarProductos();
+renderizarRadar(aComparar);
+darInfoComparacion();
 
 function renderizarProductos() {
     aComparar.forEach(el => {
 
         const miNodo = document.createElement('div');
         miNodo.classList.add('card', 'p-2');
-        // miNodo.classList.add('list-group-item', 'text-right', 'd-flex', 'justify-content-between');
         miNodo.innerHTML = `<h5>${el.nombre}</h5>`;
         const divImgPunt = document.createElement('div');
         divImgPunt.classList.add('w-100', 'text-center', 'm-auto', 'd-flex', 'justify-content-between', 'align-items-start');
@@ -30,8 +31,6 @@ function renderizarProductos() {
             const divIndicador = document.createElement('div');
             divIndicador.classList.add('barra');
             divIndicador.style.width = `${el.caracteristicas[car]}%`;
-            // divIndicador.style.height = '3px'
-            // divIndicador.style.background = 'linear-gradient(134deg,rgba(255,109,32,.733),rgba(255,219,3,.733) 30%,rgba(114,197,27,.733))';
 
             elementoLista.innerHTML = car + ': ' + el.caracteristicas[car];
             elementoLista.appendChild(divIndicador);
@@ -41,7 +40,7 @@ function renderizarProductos() {
 
 
         // // Mezclamos nodos
-        // miNodo.appendChild(miBoton);
+
         const divSemi = document.createElement('div');
         divSemi.classList.add('container-fluid');
         
@@ -58,18 +57,11 @@ function renderizarProductos() {
     })
 }
 
-renderizarRadar(aComparar);
-
 function renderizarRadar(aComparar) {
     const valores1 = Object.values(aComparar[0].caracteristicas).map((num) => { return (num * 1.35).toFixed(2) });
-
-
     const coordenada11 = [(0).toFixed(4), (-valores1[0]).toFixed(4)];
-
     const coordenada12 = [(valores1[1] * (Math.cos(0.314159))).toFixed(4), (valores1[1] * (-Math.sin(0.314159))).toFixed(4)];
-
     const coordenada13 = [(valores1[2] * (Math.cos(0.942478))).toFixed(4), (valores1[2] * (Math.sin(0.942478))).toFixed(4)];
-
     const coordenada14 = [(valores1[3] * (-Math.cos(0.942478))).toFixed(4), (valores1[3] * (Math.sin(0.942478))).toFixed(4)];
     const coordenada15 = [(valores1[4] * (-Math.cos(0.314159))).toFixed(4), (valores1[4] * (-Math.sin(0.314159))).toFixed(4)];
 
@@ -78,14 +70,9 @@ function renderizarRadar(aComparar) {
     class="poligono" stroke="gray" fill="blue"></path>`
 
     const valores2 = Object.values(aComparar[1].caracteristicas).map((num) => { return (num * 1.35).toFixed(2) });
-
-
     const coordenada21 = [(0).toFixed(4), (-valores2[0]).toFixed(4)];
-
     const coordenada22 = [(valores2[1] * (Math.cos(0.314159))).toFixed(4), (valores2[1] * (-Math.sin(0.314159))).toFixed(4)];
-
     const coordenada23 = [(valores2[2] * (Math.cos(0.942478))).toFixed(4), (valores2[2] * (Math.sin(0.942478))).toFixed(4)];
-
     const coordenada24 = [(valores2[3] * (-Math.cos(0.942478))).toFixed(4), (valores2[3] * (Math.sin(0.942478))).toFixed(4)];
     const coordenada25 = [(valores2[4] * (-Math.cos(0.314159))).toFixed(4), (valores2[4] * (-Math.sin(0.314159))).toFixed(4)];
 
@@ -115,7 +102,7 @@ function graficaPuntaje(puntaje) {
 
     return divPpal;
 }
-darInfoComparacion();
+
 function darInfoComparacion() {
     const divInfoComparacion = document.querySelector('#info_comparacion');
     divInfoComparacion.innerHTML = `<h6>Por qué es mejor <strong>${aComparar[0].nombre}</strong> que <strong>${aComparar[1].nombre}</strong></h6>`
